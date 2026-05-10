@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — 50 Shades of Scarlet</title>
+<meta name="description" content="Reach out — Goddesses, Dommes, and collaborators welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --scarlet:#8B1A1A;--scarlet-glow:#C41E1E;
+  --gold:#B8860B;--gold-light:#D4A017;
+  --ink:#0D0A08;--parchment:#F5EED8;--parchment-dark:#E8DFC0;
+  --muted:#9A8070;--ash:#1A1010;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);color:var(--parchment);
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:18px;line-height:1.7;min-height:100vh;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:999;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:0.35;
+}
+
+/* Nav */
+nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.8rem 3rem;border-bottom:1px solid rgba(139,26,26,0.2);
+  position:sticky;top:0;background:rgba(13,10,8,0.92);
+  backdrop-filter:blur(8px);z-index:100;
+}
+.nav-brand{
+  font-family:'Cinzel',serif;font-size:0.78rem;
+  letter-spacing:0.25em;color:var(--parchment);
+  text-decoration:none;text-transform:uppercase;opacity:0.85;
+}
+.nav-back{
+  font-family:'Cinzel',serif;font-size:0.68rem;
+  letter-spacing:0.2em;color:var(--muted);
+  text-decoration:none;text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-back:hover{color:var(--scarlet-glow)}
+
+/* Page layout */
+.page{
+  min-height:calc(100vh - 72px);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:5rem 2rem 4rem;
+}
+
+/* Glow */
+.glow{
+  position:fixed;top:40%;left:50%;
+  transform:translate(-50%,-50%);
+  width:600px;height:600px;
+  background:radial-gradient(ellipse,rgba(139,26,26,0.12) 0%,transparent 68%);
+  pointer-events:none;z-index:0;
+}
+
+/* Card */
+.card{
+  width:100%;max-width:560px;
+  position:relative;z-index:1;
+  border:1px solid rgba(139,26,26,0.28);
+  background:rgba(13,10,8,0.6);
+  padding:3.5rem;
+}
+.card::before{
+  content:'✦';position:absolute;top:-0.75rem;left:50%;
+  transform:translateX(-50%);background:var(--ink);
+  padding:0 0.9rem;color:var(--scarlet-glow);font-size:0.85rem;
+}
+
+.eyebrow{
+  font-family:'Cinzel',serif;font-size:0.68rem;
+  letter-spacing:0.4em;color:var(--scarlet-glow);
+  text-transform:uppercase;opacity:0.7;
+  text-align:center;margin-bottom:1.2rem;
+}
+h1{
+  font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.6rem);
+  font-weight:400;line-height:1.15;color:var(--parchment);
+  text-align:center;margin-bottom:0.8rem;
+}
+.intro{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:1.05rem;color:var(--parchment-dark);
+  text-align:center;line-height:1.85;opacity:0.8;
+  margin-bottom:2.5rem;
+}
+
+/* Ornament */
+.orn{display:flex;align-items:center;gap:1rem;margin:0 auto 2.5rem;width:100%}
+.orn::before,.orn::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(212,160,23,0.4),transparent)}
+.orn span{color:var(--gold);font-size:0.9rem;opacity:0.6;flex-shrink:0}
+
+/* Form */
+.form-group{margin-bottom:1.6rem}
+label{
+  display:block;font-family:'Cinzel',serif;
+  font-size:0.65rem;letter-spacing:0.3em;
+  text-transform:uppercase;color:var(--muted);
+  margin-bottom:0.55rem;
+}
+input[type=text],
+input[type=email],
+select,
+textarea{
+  width:100%;background:rgba(255,255,255,0.03);
+  border:1px solid rgba(154,128,112,0.25);
+  color:var(--parchment);
+  font-family:'Cormorant Garamond',serif;font-size:1rem;
+  padding:0.75rem 1rem;outline:none;
+  transition:border-color 0.2s,background 0.2s;
+  appearance:none;-webkit-appearance:none;
+  border-radius:0;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+select:focus,
+textarea:focus{
+  border-color:rgba(139,26,26,0.6);
+  background:rgba(139,26,26,0.04);
+}
+input::placeholder,textarea::placeholder{color:rgba(154,128,112,0.5);font-style:italic}
+textarea{resize:vertical;min-height:130px;line-height:1.7}
+
+select{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239A8070' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 1rem center;
+  padding-right:2.5rem;cursor:pointer;
+}
+select option{background:#1A0F0F;color:var(--parchment)}
+
+/* Checkbox row */
+.check-row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:1.6rem}
+input[type=checkbox]{
+  width:16px;height:16px;margin-top:4px;flex-shrink:0;
+  border:1px solid rgba(154,128,112,0.35);background:transparent;
+  accent-color:var(--scarlet-glow);cursor:pointer;
+}
+.check-label{
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:0.9rem;color:var(--muted);line-height:1.6;
+}
+
+/* Submit */
+.btn-submit{
+  width:100%;padding:1rem;
+  font-family:'Cinzel',serif;font-size:0.75rem;
+  letter-spacing:0.2em;text-transform:uppercase;
+  background:var(--scarlet);color:var(--parchment);
+  border:1px solid var(--scarlet-glow);
+  cursor:pointer;transition:all 0.3s;
+}
+.btn-submit:hover{background:var(--scarlet-glow);color:#fff;box-shadow:0 0 28px rgba(196,30,30,0.28)}
+.btn-submit:disabled{opacity:0.5;cursor:not-allowed}
+
+/* Success / Error states */
+.msg{
+  display:none;text-align:center;padding:1.5rem;
+  font-family:'IM Fell English',serif;font-style:italic;
+  font-size:1.05rem;line-height:1.8;margin-top:1.5rem;
+  border:1px solid;
+}
+.msg.success{color:#D4A017;border-color:rgba(212,160,23,0.3);background:rgba(212,160,23,0.05)}
+.msg.error{color:#C41E1E;border-color:rgba(196,30,30,0.3);background:rgba(196,30,30,0.05)}
+.msg.visible{display:block}
+
+/* Footer */
+footer{
+  text-align:center;padding:2rem;
+  font-family:'Cinzel',serif;font-size:0.65rem;
+  letter-spacing:0.15em;color:rgba(154,128,112,0.35);
+  text-transform:uppercase;
+}
+
+/* Fade in */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.card{animation:fadeUp 0.9s ease 0.1s both}
+nav{animation:fadeUp 0.6s ease both}
+
+@media(max-width:600px){
+  nav{padding:1.4rem 1.5rem}
+  .card{padding:2.5rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">50 Shades of Scarlet</a>
+  <a class="nav-back" href="index.html">← Return</a>
+</nav>
+
+<div class="glow"></div>
+
+<main class="page">
+  <div class="card">
+
+    <p class="eyebrow">An Invitation</p>
+    <h1>Speak to Me</h1>
+    <p class="intro">
+      Goddesses, Dommes, and those who hold the leash —<br>
+      your voice belongs in these pages.
+    </p>
+
+    <div class="orn"><span>✦</span></div>
+
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+    <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+      <div class="form-group">
+        <label for="name">Your Name or Title</label>
+        <input type="text" id="name" name="name" placeholder="Goddess, Mistress, or preferred name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Where shall I reply?" required>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Your Role</label>
+        <select id="role" name="role">
+          <option value="" disabled selected>Select your role</option>
+          <option value="Domme / Goddess">Domme / Goddess</option>
+          <option value="Collaborator / Writer">Collaborator / Writer</option>
+          <option value="Reader">Reader</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Tell me what brings you here — your interest, your story, your command…" required></textarea>
+      </div>
+
+      <div class="check-row">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label class="check-label" for="consent">
+          I confirm I am 18 or older and consent to this message being received.
+        </label>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">Send Your Message</button>
+
+    </form>
+
+    <div class="msg success" id="success-msg">
+      Your message has been received.<br>
+      I will find you in the shadows.
+    </div>
+    <div class="msg error" id="error-msg">
+      Something went wrong. Please try again or reach me directly on Wattpad.
+    </div>
+
+  </div>
+</main>
+
+<footer>© 2026 · 50 Shades of Scarlet · Adult content — 18+</footer>
+
+<script>
+const form = document.getElementById('contact-form');
+const btn  = document.getElementById('submit-btn');
+const ok   = document.getElementById('success-msg');
+const err  = document.getElementById('error-msg');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+
+  const consent = document.getElementById('consent');
+  if(!consent.checked){ consent.focus(); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  ok.classList.remove('visible');
+  err.classList.remove('visible');
+
+  try {
+    const res = await fetch(form.action, {
+      method:'POST',
+      body: new FormData(form),
+      headers:{ 'Accept':'application/json' }
+    });
+
+    if(res.ok){
+      form.style.display = 'none';
+      ok.classList.add('visible');
+    } else {
+      throw new Error('Non-ok response');
+    }
+  } catch(_) {
+    err.classList.add('visible');
+    btn.disabled = false;
+    btn.textContent = 'Send Your Message';
+  }
+});
+</script>
+</body>
+</html>
